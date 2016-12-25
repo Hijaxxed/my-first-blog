@@ -1,3 +1,12 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height:100%;
+    display:flex;
+    flex-direction:column;
+}
 
 .page-header {
     background-color: #49b6cc;
@@ -11,8 +20,9 @@
     text-decoration: none;
 }
 
+
 .content {
-    margin-left: 40px;
+    align-content: center;
 }
 
 h1, h2, h3, h4 {
@@ -34,7 +44,7 @@ h1, h2, h3, h4 {
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
     float: right;
-    font-size: 26pt;
+    font-size: 22pt;
     margin-right: 20px;
 }
 
@@ -49,3 +59,6 @@ h1, h2, h3, h4 {
 .comment {
     margin: 20px 0px 20px 20px;
 }
+    
+}
+
