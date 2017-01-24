@@ -22,11 +22,14 @@ body {
 
 
 .content {
+    color: #000000; 		
+    font-family: 'Yanone Kaffeesatz';
+    font-size: 14pt;
     align-content: center;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Julius Sans One';
 }
 
 .date {
