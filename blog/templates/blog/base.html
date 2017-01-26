@@ -19,13 +19,14 @@
 
 			<ul class="topnav" id="myTopnav">
   		  	  <li><a href="/">Home</a></li>
-  		  	  <li><a href="#news">News</a></li>
+  		  	  <li><a href="#news">Blog</a></li>
   		  	  <li><a href="#contact">Contact</a></li>
-  		  	  <li><a href="#about">About</a></li>
+  		  	  <li><a href={% url "about" %}>About</a></li>
 
 			{% if user.is_authenticated %} 
-  		  	  <li><a href={% url "admin:index" %}>Admin</a></li> 
+			  <li><a href={% url "post_draft_list" %} >Post Drafts</a></li>
   		  	  <li><a href={% url "post_new" %}>Post New</a></li>
+  		  	  <li><a href={% url "admin:index" %}>Admin</a></li> 
   		  	  <li><a href={% url "logout" %}>Logout</a></li>
 
 			{% else %}

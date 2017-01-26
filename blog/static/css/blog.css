@@ -16,7 +16,7 @@ body {
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
-    font-size: 36pt;
+    font-size: 40pt;
     text-decoration: none;
 }
 
@@ -53,7 +53,7 @@ ul.topnav li.icon {display: none;}
 .content {
     color: #000000; 		
     font-family: 'Yanone Kaffeesatz';
-    font-size: 14pt;
+    font-size: 16pt;
     align-content: center;
 }
 
