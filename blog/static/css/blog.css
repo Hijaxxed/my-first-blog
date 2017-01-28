@@ -112,6 +112,9 @@ h1, h2, h3, h4 {
    float:right;
 }
 
+input  {
+    color: #000000;
+}
 
 /*
 .sidebar {
