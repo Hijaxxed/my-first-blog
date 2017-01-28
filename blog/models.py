@@ -2,9 +2,21 @@ from django.db import models
 from django.utils import timezone
 
 
+
+def upload_location(post, filename):
+    return "%s/%s" %(post.id, filename)
+    
+
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
+    image = models.ImageField(upload_to=upload_location,
+                              null=True,
+                              blank=True,
+                              width_field="width_field",
+                              height_field="height_field")
+    height_field = models.IntegerField(default=0, null=True)
+    width_field = models.IntegerField(default=0, null=True)    
     text = models.TextField()
     created_date = models.DateTimeField(
             default=timezone.now)
@@ -18,6 +30,7 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    
 
 
 class Comment(models.Model):

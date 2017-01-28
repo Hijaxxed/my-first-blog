@@ -96,6 +96,7 @@ h1, h2, h3, h4 {
 }
 
 .post {
+    padding-top: 30px;
     margin-bottom: 70px;
     color: #ffffff;
 }

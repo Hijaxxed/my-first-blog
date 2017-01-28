@@ -16,7 +16,13 @@
 		<a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
 	{% endif %}
 
-        <h1>{{ post.title }}</h1>
+	
+	
+        <h1><b>{{ post.title }}</b></h1>
+	{% if post.image %}
+	<img src='{{ post.image.url }}' class ='img-responsive', width="600px" height="600px" />
+    	{% endif %}
+	<br/>
         <p>{{ post.text|linebreaksbr }}</p>
 
     </div>
