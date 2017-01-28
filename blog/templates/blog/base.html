@@ -14,15 +14,17 @@
 	<body>
 
 		<div class="page-header">
-
-        		<h1><a href="/">Lethargic Bliss</a></h1>
+			
+			
+        		<h1><b><a href="/">Lethargic Bliss</a></b></h1>
 
 			<ul class="topnav" id="myTopnav">
   		  	  <li><a href="/">Home</a></li>
-  		  	  <li><a href="#news">Blog</a></li>
+  		  	  <li><a href={% url "post_list" %}>Blog</a></li>
   		  	  <li><a href="#contact">Contact</a></li>
   		  	  <li><a href={% url "about" %}>About</a></li>
-
+			
+			<div class="authnav">
 			{% if user.is_authenticated %} 
 			  <li><a href={% url "post_draft_list" %} >Post Drafts</a></li>
   		  	  <li><a href={% url "post_new" %}>Post New</a></li>
@@ -32,19 +34,16 @@
 			{% else %}
 			  <li><a href={% url 'login' %}>Login</a></li>
 			{% endif %}			
+			
 
   		 	  <li class="icon">
    		   	    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
   		 	  </li>
+			</div>
 			</ul>
-
-
-
-
 
 		</div>
  		
-
 
 		<div class="content container">
         		<div class="row">
@@ -55,6 +54,8 @@
         		</div>
    
     		</div>
+		
+		
 
 	</body>
 

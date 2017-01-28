@@ -31,6 +31,10 @@ def post_remove(request, pk):
 def about_page(request):
     return render(request, 'blog/about.html')
 
+def home_page(request):
+    return render(request, 'blog/home.html')
+
+
 @login_required
 def post_new(request):
     if request.method == "POST":
