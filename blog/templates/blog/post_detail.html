@@ -28,7 +28,8 @@
 	<img src='{{ post.image.url }}' class ='img-responsive', width="600px" height="600px" />
     	{% endif %}
 	<br/>
-        <p>{{ post.text|linebreaksbr }}</p>
+
+	<div class = 'content-markdown'> <p>{{ post.text }}</p> </div>
 
     </div>
 
@@ -40,6 +41,7 @@
         <strong>{{ comment.author }}</strong>
         <p>{{ comment.text|linebreaks }}</p>
     </div>
+
 {% empty %}
     <p>No comments here yet :(</p>
 {% endfor %}
