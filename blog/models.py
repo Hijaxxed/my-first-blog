@@ -5,6 +5,10 @@ from django.db.models.signals import pre_save
 from django.utils.text import slugify
 
 
+
+
+
+
 def upload_location(post, filename):
     return "%s/%s" %(post.slug, filename)
     
@@ -26,6 +30,8 @@ class Post(models.Model):
     published_date = models.DateTimeField(
             blank=True, null=True)
 
+    
+    
     def publish(self):
         self.published_date = timezone.now()
         self.save()
