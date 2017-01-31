@@ -16,6 +16,9 @@ body {
 	linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
     background-color: #131313;
     background-size: 20px 20px;
+	
+
+
 
   	padding: 0;
   	margin: 0;
@@ -71,7 +74,7 @@ ul.topnav li.icon {display: none;}
 
 
 .content {
-    color: #ffffff;		
+    color: #fff;		
     font-family: 'Yanone Kaffeesatz';
     font-size: 16pt;
     margin-left: 150px;
@@ -82,7 +85,7 @@ ul.topnav li.icon {display: none;}
 
 h1, h2, h3, h4 {
     font-family: 'Julius Sans One';
-    color: #ffffff;
+    color: #fff;
 }
 
 h1 {
@@ -115,7 +118,7 @@ h1 {
 .post {
     padding-top: 30px;
     margin-bottom: 70px;
-    color: #ffffff;
+    color: #fff;
     
 }
 
@@ -137,12 +140,13 @@ input  {
 
 
 .feed {	
-
+	
 }
 
 .feed h1{
 	font-size:25pt;
 }
-.home-block{
 
+#id_text_wmd_preview {
+	color: #000;
 }

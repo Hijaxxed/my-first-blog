@@ -1,0 +1,148 @@
+html {
+    	height: 100%;
+	padding:0;
+	margin:0;
+}
+
+body {
+    height:100%;
+    flex-direction:column;
+    background:
+	linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+	linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+	linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+	linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+	linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+	linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+    background-color: #131313;
+    background-size: 20px 20px;
+
+  	padding: 0;
+  	margin: 0;
+	
+	overflow-x:hidden;
+    
+}
+
+.page-header {
+    background: linear-gradient(to bottom right, #49b6cc, black); 
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+	
+    
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 40pt;
+    text-decoration: none; 
+    padding-bottom: 15px;
+    
+}
+
+ /* Remove margins and padding from the list, and add a black background color */
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #333, black);
+}
+
+/* Float the list items side by side */
+ul.topnav li {float: left;}
+
+/* Style the links inside the list items */
+ul.topnav li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.topnav li a:hover {background-color: #555;}
+
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+ul.topnav li.icon {display: none;}
+
+
+.content {
+    color: #ffffff;		
+    font-family: 'Yanone Kaffeesatz';
+    font-size: 16pt;
+    margin-left: 150px;
+    width:100%;
+   
+	
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Julius Sans One';
+    color: #ffffff;
+}
+
+h1 {
+	font-size:36pt;
+}
+
+.feed h2 {
+	font-size:26pt;
+}
+.date {
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+    color: #000000;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 22pt;
+    margin-right: 20px;
+}
+
+.post {
+    padding-top: 30px;
+    margin-bottom: 70px;
+    color: #ffffff;
+    
+}
+
+.post h1 a, .post h1 a:visited {
+    color: #ffffff;	
+}
+
+.comment {
+    margin: 20px 0px 20px 20px;
+}
+    
+.authnav {
+   float:right;
+}
+
+input  {
+    color: #000000;
+}
+
+
+.feed {	
+	
+}
+
+.feed h1{
+	font-size:25pt;
+}
+.home-block{
+
+}

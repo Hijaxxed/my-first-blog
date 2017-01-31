@@ -14,12 +14,8 @@
 	<p>Feel free to browse around, and I hope you enjoy whatever you may find.</p>
 	
 	<hr>
-
-	<p>"Insert stuff relevant to a home page here".</p>
-
-	<div>"Maybe put latest 3 blog posts here."</div>
 	
-	<hr>
+	<br />
 
 	<img src="/static/images/space.jpg" alt="Pretty space concept" width="640px" height="360px">
 	<br />
@@ -29,14 +25,14 @@
 	<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 	
 	</div>
-	
+
 	<br/>
-	<br/>
+
+
+	<h1>Latest Posts</h1>
+	<hr>
 
 	<div class="feed">
-
-	<h2>Latest Posts</h2>
-	<hr>
 
 	{% for post in feed %}
             <div class="post">
@@ -45,8 +41,8 @@
 	        <a href="{% url 'post_detail' slug=post.slug %}"><img src='{{ post.image.url }}' class ='img-responsive', width="300px" height="300px" /></a>
 	        {% endif %}
 
-                <h1><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h1
-                <p>{{ post.text|truncatechars:1250|linebreaksbr }}</p>
+                <h1><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h1>
+                <div class = 'content-markdown'> <p>{{ post.text|truncatechars:1250 }}</p> </div>
 	        <a href="{% url 'post_detail' slug=post.slug %}">Comments: {{ post.comments.count }}</a>
 	        <div class="date">
                     {{ post.published_date }}

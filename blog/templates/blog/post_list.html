@@ -10,12 +10,12 @@
         <div class="post">
 	
 	    {% if post.image %}
-	    <a href="{% url 'post_detail' slug=post.slug %}"><img src='{{ post.image.url }}' class ='img-responsive', width="500px" height="500px" /></a>
+	    <a href="{% url 'post_detail' slug=post.slug %}"><img src='{{ post.image.url }}' class ='img-responsive', width="500px" height="500px" /></a> 
 	    {% endif %}
 
-            <h1><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h1
-            <p>{{ post.text|truncatechars:1250|linebreaksbr }}</p>
-	    <a href="{% url 'post_detail' slug=post.slug %}">Comments: {{ post.comments.count }}</a>
+            <h1><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h1>
+            <div class = 'content-markdown'> <p>{{ post.text|truncatechars:1250 }}</p> </div>
+	    <a href="{% url 'post_detail' slug=post.slug %}">Comments: {{ post.comments.count }}</a> 
 	    <div class="date">
                 {{ post.published_date }}
             </div>
