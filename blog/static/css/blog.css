@@ -1,12 +1,13 @@
 html {
     	height: 100%;
 	padding:0;
+   	width: 100%;
 	margin:0;
 }
 
 body {
     height:100%;
-    flex-direction:column;
+    width:100%;
     background:
 	linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
 	linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
@@ -16,15 +17,24 @@ body {
 	linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
     background-color: #131313;
     background-size: 20px 20px;
-	
-
-
 
   	padding: 0;
   	margin: 0;
 	
 	overflow-x:hidden;
     
+}
+
+
+.content {
+    color: #ffffff;		
+    font-family: 'Yanone Kaffeesatz';
+    font-size: 16pt;
+    margin-left: 350px;
+    width:100%;
+    
+   
+	
 }
 
 .page-header {
@@ -72,24 +82,21 @@ ul.topnav li a:hover {background-color: #555;}
 /* Hide the list item that contains the link that should open and close the topnav on small screens */
 ul.topnav li.icon {display: none;}
 
-
-.content {
-    color: #fff;		
-    font-family: 'Yanone Kaffeesatz';
-    font-size: 16pt;
-    margin-left: 150px;
-    width:100%;
-   
-	
+.authnav {
+   float:right;
 }
+
+
+
+
 
 h1, h2, h3, h4 {
     font-family: 'Julius Sans One';
-    color: #fff;
+    color: #ffffff;
 }
 
 h1 {
-	font-size:36pt;
+	font-size:45pt;
 }
 
 .feed h2 {
@@ -118,7 +125,7 @@ h1 {
 .post {
     padding-top: 30px;
     margin-bottom: 70px;
-    color: #fff;
+    color: #ffffff;
     
 }
 
@@ -130,23 +137,10 @@ h1 {
     margin: 20px 0px 20px 20px;
 }
     
-.authnav {
-   float:right;
-}
-
 input  {
     color: #000000;
 }
 
-
-.feed {	
-	
-}
-
 .feed h1{
 	font-size:25pt;
-}
-
-#id_text_wmd_preview {
-	color: #000;
 }

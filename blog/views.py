@@ -9,21 +9,28 @@ from .forms import PostForm, CommentForm
 
 def post_list(request):
     
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    
     
 
 #search bar - not filtering
-    #queryset_list = Post.objects.all()#.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    posts = Post.objects.all()#.filter(published_date__lte=timezone.now()).order_by('-published_date')
     
-    #query = request.GET.get("q")
+    query = request.GET.get("q")
     
-    #if query:
-            #queryset_list = queryset_list.filter(
-                        #Q(title__icontains=query)|
-                        #Q(text__icontains=query)
-                        #).distinct()
+    if query:
+        posts = posts.filter(       
+				Q(title__icontains=query)|
+				Q(text__icontains=query)
+				#Q(user__first_name__icontains=query) |
+				#Q(user__last_name__icontains=query)
+				).distinct()
+    else:
+        posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+
 
         
+
+    #posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')        
     return render(request, 'blog/post_list.html', {'posts':posts})
 
 def post_detail(request, slug):
