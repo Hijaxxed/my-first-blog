@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+
+    <head>
+        <title>Lethargic Bliss</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+
+
+	{% block head_extra %}
+	{% endblock head_extra %}
+    </head>
+   
+<body>
+	
+		<div class="page-header">
+			
+			
+        		<h1><b><a href="/">Lethargic Bliss</a></b></h1>
+
+			<ul class="topnav" id="myTopnav">
+  		  	  <li><a href="/">Home</a></li>
+  		  	  <li><a href={% url "post_list" %}>Blog</a></li>
+  		  	  <li><a href="#contact">Contact</a></li>
+  		  	  <li><a href={% url "about" %}>About</a></li>
+			
+			<div class="authnav">
+			{% if user.is_authenticated %} 
+			  <li><a href={% url "post_draft_list" %} >Post Drafts</a></li>
+  		  	  <li><a href={% url "post_new" %}>Post New</a></li>
+  		  	  <li><a href={% url "admin:index" %}>Admin</a></li> 
+  		  	  <li><a href={% url "logout" %}>Logout</a></li>
+
+			{% else %}
+			  <li><a href={% url 'login' %}>Login</a></li>
+			{% endif %}			
+			
+
+  		 	  <li class="icon">
+   		   	    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+  		 	  </li>
+			</div>
+			</ul>
+
+		</div>
+				
+		<div class="parent">
+
+		<div class="content container">
+        		<div class="row">
+           		<div class="col-md-8">
+            		{% block content %}
+            		{% endblock %}
+            		</div>
+        		</div>
+   
+    		</div>
+				
+		</div>
+
+<script src="http://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $(".content-markdown").each(function(){
+            var content = $(this).text()
+	    console.log(content)
+            var markedContent = marked(content)
+	    console.log(markedContent)
+            $(this).html(markedContent)
+    })
+
+})
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+	
+	    
+	    {% if post.image %}
+	    <img src='{{ post.image.url }}' class ='img-responsive', width="600px" height="600px" />
+	    {% endif %}
+
+            <p class="date">created: {{ post.created_date|date:'d-m-Y' }}</p>
+            <h1><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h1>
+            <div class = 'content-markdown'> <p>{{ post.text|truncatechars:1250 }}</p> </div>
+        </div>
+    {% endfor %}
+{% endblock %}
