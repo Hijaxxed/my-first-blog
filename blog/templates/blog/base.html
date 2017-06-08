@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
 	<link href='//fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 
 
@@ -49,7 +50,16 @@
 			</ul>
 
 		</div>
-				
+		
+		<div class="searchbar">
+    		<form method='GET' action=''>
+		
+    		<input type='text' name='q' id="search" placeholder='Search posts'/>
+		<button>Search</button>
+    		
+    		</form>		
+		</div>
+		
 		<div class="parent">
 
 		<div class="content">
