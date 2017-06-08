@@ -54,6 +54,9 @@ def post_remove(request, slug):
 def about_page(request):
     return render(request, 'blog/about.html')
 
+def contact_page(request):
+    return render(request, 'blog/contact.html')
+
 def home_page(request):
     feed = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')[0:3]
     
