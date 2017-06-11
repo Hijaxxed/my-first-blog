@@ -147,14 +147,20 @@ input  {
     color: #000000;
 }
 
+.wmd-input{
+	height:800px;
 
+
+}
 
 
 
 
 .wmd-preview{
+
 	color: #000000;
 	background-color: #a8a4a6;
+
 }
 
 
@@ -177,11 +183,6 @@ input  {
 	padding-right:1%;;
 	
 }
-
-
-
-
-
 
 .searchbar form {
 	background: #111;

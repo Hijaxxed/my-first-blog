@@ -27,7 +27,7 @@
 	    {% if post.image %}
 	    <a href="{% url 'post_detail' slug=post.slug %}"><img src='{{ post.image.url }}' class ='img-responsive', width="500px" height="500px" /></a> 
 	    {% endif %}
-        
+            <br/>
             <div class = 'content-markdown'> <p>{{ post.text|truncatechars:2250 }}</p> </div>
 	    <a href="{% url 'post_detail' slug=post.slug %}">Comments: {{ post.comments.count }}</a> 
 	    <div class="date">
