@@ -15,5 +15,7 @@ urlpatterns = [
     url(r'^post/(?P<slug>[\w-]+)/remove/$', views.post_remove, name='post_remove'),
     url(r'^about', views.about_page, name='about'),
     url(r'^contact', views.contact_page, name='contact'),
+    url(r'^categories', views.category_list, name='category_list'),
+    url(r'^category/(?P<slug>[\w-]+)/$', views.category_detail, name='category_detail'),
        
 ]

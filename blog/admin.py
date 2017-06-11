@@ -1,5 +1,26 @@
 from django.contrib import admin
-from .models import Post, Comment
+from django.contrib.auth.models import User
+from blog import models
+#from .models import Post, Comment, Category
 
-admin.site.register(Post)
-admin.site.register(Comment)
+class CategoryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("title",)}
+    
+class CategoryToPostInline(admin.TabularInline):
+    model = models.CategoryToPost
+    extra = 1
+    
+class PostAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("title",)}
+    exclude = ('author',)
+    inlines = [CategoryToPostInline]
+    
+    def save_model(self, request, obj, form, change):
+        obj.author = request.user
+        obj.save()
+
+
+    
+admin.site.register(models.Post, PostAdmin)
+admin.site.register(models.Comment)
+admin.site.register(models.Category, CategoryAdmin)

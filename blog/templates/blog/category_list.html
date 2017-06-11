@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+ 	<h1><b>Categories<b/></h1>
+
+	<hr/>
+	<br/>
+
+    	{% if categories %}
+        <ul>
+        {% for category in categories %}
+        	<li><a href="{% url 'category_detail' slug=category.slug %}">{{ category.title }}</a></li>
+        {% endfor %}
+        </ul>
+
+    	{% else %}
+        <p>There are no categories.</p>
+    	{% endif %}
+
+
+{% endblock %}

@@ -5,9 +5,19 @@ from django.db.models.signals import pre_save
 from django.utils.text import slugify
 
 
+class Category(models.Model): 
+    title = models.CharField(max_length=200) 
+    slug = models.SlugField(max_length=40, unique=True) 
+    description = models.TextField()
+    
+    class Meta: 
+        verbose_name_plural = "Categories"
 
+    def __str__(self):
+        return '%s' % self.title
 
-
+    def get_absolute_url(self):
+        return "/categories/%s/" % self.slug
 
 def upload_location(post, filename):
     return "%s/%s" %(post.slug, filename)
@@ -25,11 +35,12 @@ class Post(models.Model):
     height_field = models.IntegerField(default=0, null=True)
     width_field = models.IntegerField(default=0, null=True)    
     text = models.TextField()
-    created_date = models.DateTimeField(
-            default=timezone.now)
-    published_date = models.DateTimeField(
-            blank=True, null=True)
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
 
+    categories = models.ManyToManyField(Category, blank=True, null=True, through='CategoryToPost')
+    #tags = models.ManyToManyField(Category, blank=True, null=True, through='CategoryToPost')
+    
     
     
     def publish(self):
@@ -41,7 +52,11 @@ class Post(models.Model):
     
     def get_absolute_url(self):      
         return reverse("post:post_detail", kwargs={"slug": self.slug})
+
                        
+class CategoryToPost(models.Model):
+    post = models.ForeignKey(Post)
+    category = models.ForeignKey(Category)
     
 
 def create_slug(instance, new_slug=None):

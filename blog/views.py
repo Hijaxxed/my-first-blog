@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from .models import Post, Comment
+from .models import Post, Comment, Category
 from .forms import PostForm, CommentForm
 
 # Create your views here.
@@ -13,19 +13,10 @@ def post_list(request):
     
     query = request.GET.get("q")    
     if query:
-        posts = posts.filter(       
-				Q(title__icontains=query)|
-				Q(text__icontains=query)
-				#Q(user__first_name__icontains=query) |
-				#Q(user__last_name__icontains=query)
-				).distinct()
+        posts = posts.filter(Q(title__icontains=query)|Q(text__icontains=query)).distinct()
     else:
         posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-
-
-        
-
-    #posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')        
+          
     return render(request, 'blog/post_list.html', {'posts':posts})
 
 def post_detail(request, slug):
@@ -57,6 +48,22 @@ def home_page(request):
         
     return render(request, 'blog/home.html',{'feed':feed})
 
+
+def category_list(request):
+    categories = Category.objects.all() # this will get all categories, you can do some filtering if you need (e.g. excluding categories without posts in it)
+
+    return render (request, 'blog/category_list.html', {'categories': categories})
+
+def category_detail(request, slug):
+    category = get_object_or_404(Category, slug=slug)
+
+    posts = Post.objects.filter()
+    
+    #category = Category.objects.get(slug=slug)
+    #posts = Post.objects.all().filter(categories=categories))
+    #posts = Category.objects.get(slug=slug)
+    
+    return render(request, 'blog/category_detail.html',{'category': category , 'posts': posts})
 
 @login_required
 def post_new(request):

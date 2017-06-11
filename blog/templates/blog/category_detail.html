@@ -2,27 +2,18 @@
 
 {% block content %}
 
-    <br/>
-
-    <h1><b>Blog Posts</b></h1>	
-
-    <hr>
-	
-    <br/>
-
-
-	
-    <!--	
-    <form method='GET' action=''>
-    <input type='text' name='q' placeholder='Search posts'/>
-    <input type='submit' value='Search'/>
-    </form>
-    -->
+	<h1><b>{{ category.title }}</b></h1>
+	<hr/>
+	<br/>
+	<div>{{ category.description }}</div>
+	<br/>
+	<hr/>
+	<br/>
 
     {% for post in posts %}
         <div class="post">
 	
-	    <h2><b><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></b></h2>
+	    <h2><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h2>
 	
 	    {% if post.image %}
 	    <a href="{% url 'post_detail' slug=post.slug %}"><img src='{{ post.image.url }}' class ='img-responsive', width="500px" height="500px" /></a> 
@@ -36,7 +27,6 @@
 
         </div>
     {% endfor %}
-
 
 
 {% endblock %}
