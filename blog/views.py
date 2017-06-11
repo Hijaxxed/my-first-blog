@@ -8,15 +8,10 @@ from .forms import PostForm, CommentForm
 # Create your views here.
 
 def post_list(request):
-    
-    
-    
-
-#search bar - not filtering
+   
     posts = Post.objects.all()#.filter(published_date__lte=timezone.now()).order_by('-published_date')
     
-    query = request.GET.get("q")
-    
+    query = request.GET.get("q")    
     if query:
         posts = posts.filter(       
 				Q(title__icontains=query)|
@@ -59,8 +54,7 @@ def contact_page(request):
 
 def home_page(request):
     feed = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')[0:3]
-    
-    
+        
     return render(request, 'blog/home.html',{'feed':feed})
 
 
