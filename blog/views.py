@@ -50,19 +50,16 @@ def home_page(request):
 
 
 def category_list(request):
-    categories = Category.objects.all() # this will get all categories, you can do some filtering if you need (e.g. excluding categories without posts in it)
+    categories = Category.objects.all()
 
     return render (request, 'blog/category_list.html', {'categories': categories})
 
 def category_detail(request, slug):
     category = get_object_or_404(Category, slug=slug)
+    
+    #posts = Post.objects.filter()  
+    posts = Post.objects.all().filter(categories=category)
 
-    posts = Post.objects.filter()
-    
-    #category = Category.objects.get(slug=slug)
-    #posts = Post.objects.all().filter(categories=categories))
-    #posts = Category.objects.get(slug=slug)
-    
     return render(request, 'blog/category_detail.html',{'category': category , 'posts': posts})
 
 @login_required

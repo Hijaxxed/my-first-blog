@@ -101,7 +101,7 @@ h1 {
 }
 
 h2 {
-	font-size:36pt;
+	font-size:42pt;
 }
 
 .feed h1{
@@ -298,4 +298,11 @@ input  {
 		border-color: #1ac6ff;
 		box-shadow: 0 0 20px rgba(26, 198, 255,.6), inset 0 0 10px rgba(26, 198, 255,.4), 0 2px 0 #000;
     }
+}
+
+
+.category_list li {
+	padding: 15px 16px;	
+	font-size:60px;
+	
 }

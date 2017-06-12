@@ -8,14 +8,17 @@
 	<br/>
 
     	{% if categories %}
+	<div class = "category_list" >
         <ul>
         {% for category in categories %}
-        	<li><a href="{% url 'category_detail' slug=category.slug %}">{{ category.title }}</a></li>
+        	<li><b><a href="{% url 'category_detail' slug=category.slug %}">{{ category.title }}</a></b></li>
         {% endfor %}
         </ul>
 
     	{% else %}
         <p>There are no categories.</p>
+
+	</div>
     	{% endif %}
 
 
