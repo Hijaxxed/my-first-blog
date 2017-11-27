@@ -12,10 +12,9 @@
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 
-
-
 	{% block head_extra %}
 	{% endblock head_extra %}
+
     </head>
    
 <body>
@@ -26,14 +25,18 @@
         		<h1><b><a href="/">Lethargic Bliss</a></b></h1>
 
 			<ul class="topnav" id="myTopnav">
+
   		  	  <li><a href="/">Home</a></li>
   		  	  <li><a href={% url "post_list" %}>Blog</a></li>
 			  <li><a href={% url "category_list" %}>Categories</a></li>
+			  <li><a href={% url "gamedev_about" %}>Game Development</a></li>				
   		  	  <li><a href={% url "contact" %}>Contact</a></li>
   		  	  <li><a href={% url "about" %}>About</a></li>
 			
 			<div class="authnav">
+
 			{% if user.is_authenticated %} 
+
 			  <li><a href={% url "post_draft_list" %} >Post Drafts</a></li>
   		  	  <li><a href={% url "post_new" %}>Post New</a></li>
   		  	  <li><a href={% url "admin:index" %}>Admin</a></li> 
@@ -47,10 +50,10 @@
   		 	  <li class="icon">
    		   	    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
   		 	  </li>
-			</div>
+			</div> <!-- end authnav -->
 			</ul>
 
-		</div>
+		</div> <!-- end page-header -->
 		
 		<div class="searchbar">
     		<form method='GET' action='{% url 'post_list' %}'>
@@ -59,21 +62,24 @@
 		<button>Search</button>
     		
     		</form>		
-		</div>
+		</div> <!-- end searchbar -->
 		
 		<div class="parent">
 
 		<div class="content">
+
         		<div class="row">
            		<div class="col-md-8">
+
             		{% block content %}
             		{% endblock %}
-            		</div>
-        		</div>
+
+            		</div> <!-- end row -->
+        		</div> <!-- end col-md-8 -->
    
-    		</div>
+    		</div> <!-- end div -->
 				
-		</div>
+		</div> <!-- end div -->
 
 <script src="http://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 

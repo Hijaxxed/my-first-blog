@@ -17,5 +17,6 @@ urlpatterns = [
     url(r'^contact', views.contact_page, name='contact'),
     url(r'^categories', views.category_list, name='category_list'),
     url(r'^category/(?P<slug>[\w-]+)/$', views.category_detail, name='category_detail'),
+    url(r'^gamedev_about', views.gamedev_about, name='gamedev_about'),    
        
 ]

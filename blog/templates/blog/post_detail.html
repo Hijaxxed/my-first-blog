@@ -33,7 +33,11 @@
 
     </div>
 
+
+
 <hr>
+
+
 <a class="btn btn-default" href="{% url 'add_comment_to_post' slug=post.slug %}">Add comment</a>
 {% for comment in post.comments.all %}
     <div class="comment">
@@ -45,5 +49,7 @@
 {% empty %}
     <p>No comments here yet :(</p>
 {% endfor %}
+
+
 
 {% endblock %}

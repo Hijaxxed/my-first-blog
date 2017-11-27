@@ -62,6 +62,11 @@ def category_detail(request, slug):
 
     return render(request, 'blog/category_detail.html',{'category': category , 'posts': posts})
 
+def gamedev_about(request):
+    return render(request, 'blog/gamedev_about.html')
+
+
+
 @login_required
 def post_new(request):
     if request.method == "POST":
