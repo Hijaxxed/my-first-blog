@@ -40,7 +40,9 @@
 
 	<div class="feed">
 
+	{% if posts %}
 	{% for post in feed %}
+
             <div class="post">
 
                 <h1><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h1>
@@ -48,16 +50,25 @@
 	        {% if post.image %}
 	        <a href="{% url 'post_detail' slug=post.slug %}"><img src='{{ post.image.url }}' class ='img-responsive', width="300px" height="300px" /></a>
 	        {% endif %}
+
 		<br/>
+
                 <div class = 'content-markdown'> <p>{{ post.text|truncatechars:800 }}</p> </div>
 	        <a href="{% url 'post_detail' slug=post.slug %}">Comments: {{ post.comments.count }}</a>
 	        <div class="date">
                     {{ post.published_date }}
-                </div>
+                </div> <!-- end date -->
 
-            </div>
+            </div> <!-- end post list -->
+
 	{% endfor %}
-	</div>
+
+	{% else %}
+	<br/>
+        <p>There are no posts.</p>
+	{% endif %} 
+
+	</div> <!-- end feed -->
 
 
 {% endblock %}

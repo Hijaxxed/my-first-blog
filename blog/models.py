@@ -38,8 +38,7 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
-    categories = models.ManyToManyField(Category, blank=True, null=True, through='CategoryToPost')
-    #tags = models.ManyToManyField(Category, blank=True, null=True, through='CategoryToPost')
+    categories = models.ManyToManyField(Category, blank=True,through='CategoryToPost')
     
     
     
