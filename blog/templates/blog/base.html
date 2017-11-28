@@ -54,32 +54,68 @@
 			</ul>
 
 		</div> <!-- end page-header -->
+
 		
-		<div class="searchbar">
-    		<form method='GET' action='{% url 'post_list' %}'>
-		
-    		<input type='text' name='q' id="search" placeholder='Search posts'/>
-		<button>Search</button>
-    		
-    		</form>		
-		</div> <!-- end searchbar -->
+
+
 		
 		<div class="parent">
 
-		<div class="content">
+			<div class="sidepanel">
 
-        		<div class="row">
-           		<div class="col-md-8">
+				<div class="searchbar">
+    				<form method='GET' action='{% url 'post_list' %}'>
+		
+    				<input type='text' name='q' id="search" placeholder='Search posts'/>
+				<button>Search</button>
+    		
+    				</form>	
+				</div> <!-- end searchbar -->
 
-            		{% block content %}
-            		{% endblock %}
 
-            		</div> <!-- end row -->
-        		</div> <!-- end col-md-8 -->
+
+				<div class="sidebar-wrapper">
+				<div class="sidebar">
+			
+				<div>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
+Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words.
+				</div>
+
+				<div>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
+Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words.
+				</div>
+
+				<div>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
+Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words.
+				</div>
+
+				<div>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
+Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words.
+				</div>
+
+ 				</div> <!-- end sidebar -->
+				</div> <!-- end sidebar-wrapper -->
+
+			</div> <!-- end sidepanel -->
+
+
+			<div class="content">
+
+        			<div class="row">
+           			<div class="col-md-8">
+
+            			{% block content %}
+            			{% endblock %}
+
+            			</div> <!-- end row -->
+        			</div> <!-- end col-md-8 -->
    
-    		</div> <!-- end div -->
+    			</div> <!-- end content -->
 				
-		</div> <!-- end div -->
+
+		</div> <!-- end parent -->
+
+
 
 <script src="http://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 
