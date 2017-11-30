@@ -13,6 +13,7 @@
 	{% if posts %}
 
     	{% for post in posts %}
+
         	<div class="post">
 	
 	    		<h2><b><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></b></h2>
@@ -31,7 +32,7 @@
 
  
 
-        	</div> <!-- end post list -->
+        	</div> <!-- end class post -->
 
 	{% endfor %}
 

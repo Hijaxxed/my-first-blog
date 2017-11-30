@@ -6,14 +6,14 @@ from blog import models
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
     
-class CategoryToPostInline(admin.TabularInline):
+"""class CategoryToPostInline(admin.TabularInline):
     model = models.CategoryToPost
-    extra = 1
+    extra = 1"""
     
 class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
     exclude = ('author',)
-    inlines = [CategoryToPostInline]
+    #inlines = [CategoryToPostInline]
     
     def save_model(self, request, obj, form, change):
         obj.author = request.user

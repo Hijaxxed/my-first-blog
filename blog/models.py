@@ -38,7 +38,8 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
-    categories = models.ManyToManyField(Category, blank=True,through='CategoryToPost')
+    #categories = models.ManyToManyField(Category, blank=True,through='CategoryToPost')
+    categories = models.ForeignKey(Category, blank=True, null=True)
     
     
     
@@ -53,9 +54,9 @@ class Post(models.Model):
         return reverse("post:post_detail", kwargs={"slug": self.slug})
 
                        
-class CategoryToPost(models.Model):
+"""class CategoryToPost(models.Model):
     post = models.ForeignKey(Post)
-    category = models.ForeignKey(Category)
+    category = models.ForeignKey(Category)"""
     
 
 def create_slug(instance, new_slug=None):
@@ -90,3 +91,32 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+
+'''class GamePost(models.Model):
+    author = models.ForeignKey('auth.User')
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(unique=True)
+    image = models.ImageField(upload_to=upload_location,
+                              null=True,
+                              blank=True,
+                              width_field="width_field",
+                              height_field="height_field")
+    height_field = models.IntegerField(default=0, null=True)
+    width_field = models.IntegerField(default=0, null=True)    
+    text = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
+
+    categories = models.ManyToManyField(Category, blank=True,through='CategoryToPost')
+    
+    
+    
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.title
+    
+    def get_absolute_url(self):      
+        return reverse("post:post_detail", kwargs={"slug": self.slug}) '''

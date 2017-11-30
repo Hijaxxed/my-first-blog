@@ -11,7 +11,7 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = (
             'title',
-            #'category',
+            'categories',
             'text',
             'image'
             )
